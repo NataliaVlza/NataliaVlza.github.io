@@ -1,6 +1,17 @@
+export interface Certification {
+  name: string;
+  issuer?: string;
+  detail?: string;
+  status: "Completado" | "En curso" | "Reconocimiento";
+  // opcional: ruta de la constancia en /public (ej. "docs/certificados/mi-constancia.pdf")
+  file?: string;
+}
+
 // Contenido de la sección "Perfil" (nombre, puesto, descripción, educación y habilidades)
 export const profile = {
   banner: "Perfil",
+  // ubicación que aparece bajo tu nombre en el avatar
+  location: "Hermosillo, Son.",
   fullName: "Natalia Guadalupe Sánchez Valenzuela",
   role: "Aspirante a Ciencia de Datos",
   // texto corto que aparece sobre el avatar y en la etiqueta de la portada
@@ -34,5 +45,38 @@ export const profile = {
       title: "Sociales",
       items: ["Pensamiento analítico", "Atención al detalle", "Autodidactismo", "Resolución de problemas"],
     },
+  },
+  certifications: {
+    title: "Certificaciones y logros",
+    items: [
+      {
+        name: "Introducción a la Ciencia de Datos",
+        issuer: "Santander Open Academy · contenido de IE University",
+        detail: "Curso de 6 horas y 2 módulos · septiembre de 2026",
+        status: "Completado",
+      },
+      {
+        name: "Introducción a la ciencia de datos en Microsoft Fabric",
+        issuer: "Microsoft Learn",
+        detail: "Logro obtenido · octubre de 2026",
+        status: "Completado",
+      },
+      {
+        name: "Exploración y análisis de datos con Python",
+        issuer: "Microsoft Learn",
+        detail: "Evaluación del módulo aprobada · octubre de 2026",
+        status: "Completado",
+      },
+      {
+        name: "Diplomado Técnico en Big Data",
+        detail: "Identificación, procesamiento y análisis de grandes volúmenes de datos",
+        status: "En curso",
+      },
+      {
+        // Agrega aquí el evento y la fecha, y la constancia en "file" cuando la tengas
+        name: "3.er lugar en presentación de cartel científico",
+        status: "Reconocimiento",
+      },
+    ] as Certification[],
   },
 };

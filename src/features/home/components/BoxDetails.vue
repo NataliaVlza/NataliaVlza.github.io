@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { t } from "../../../i18n/utils/translate";
+import { profile } from "../../../content/profile";
 import { ref, watchEffect, onBeforeUnmount } from "vue";
 import gsap from "gsap";
 import AppearingText from "../../../components/AppearingText.vue";
@@ -114,9 +114,9 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
           <div class="box-details-item">
             <PinIcon class="box-details-icon" />
             <AppearingText
-              v-if="t('México')"
+              v-if="profile.location"
               class="box-details-content-copy"
-              :text="t('México')"
+              :text="profile.location"
               :steps="3"
               :duration="0.35"
               @timeline:created="(tl: gsap.core.Timeline) => handleTimelineCreated(tl, 0.1)"

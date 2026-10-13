@@ -4,7 +4,6 @@ import gsap from "gsap";
 import { BREAKPOINTS } from "../../../utils/sizes";
 import { Vector3 } from "three";
 import ProjectedElement from "../../../components/ProjectedElement.vue";
-import { t } from "../../../i18n/utils/translate";
 import AppearingText from "../../../components/AppearingText.vue";
 import PinIcon from "../../../components/icons/Pin.vue";
 import { profile } from "../../../content/profile";
@@ -103,7 +102,7 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
           <p class="box-description-details-name">Natalia</p>
           <div class="box-description-details-location">
             <PinIcon class="box-description-details-location-icon" />
-            <p class="box-description-details-location-copy">{{ t("México") }}</p>
+            <p class="box-description-details-location-copy">{{ profile.location }}</p>
           </div>
         </div>
         <div class="box-description-line"></div>

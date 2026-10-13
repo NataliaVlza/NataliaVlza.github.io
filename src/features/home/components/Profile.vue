@@ -2,6 +2,8 @@
 import NotchSection from "../../../components/NotchSection.vue";
 import Banner from "../../../components/Banner.vue";
 import { profile } from "../../../content/profile";
+
+const fileUrl = (path: string) => import.meta.env.BASE_URL + path.replace(/^\/+/, "");
 </script>
 
 <template>
@@ -54,6 +56,28 @@ import { profile } from "../../../content/profile";
               </ul>
             </div>
           </div>
+        </article>
+        <article class="profile-card profile-card-wide">
+          <h3 class="profile-card-title">{{ profile.certifications.title }}</h3>
+          <ul class="profile-certs">
+            <li v-for="item in profile.certifications.items" :key="item.name" class="profile-cert">
+              <span
+                class="profile-cert-status"
+                :class="{
+                  'profile-cert-status-done': item.status === 'Completado',
+                  'profile-cert-status-progress': item.status === 'En curso',
+                  'profile-cert-status-award': item.status === 'Reconocimiento',
+                }"
+                >{{ item.status }}</span
+              >
+              <strong class="profile-cert-name">{{ item.name }}</strong>
+              <span v-if="item.issuer" class="profile-cert-issuer">{{ item.issuer }}</span>
+              <span v-if="item.detail" class="profile-cert-detail">{{ item.detail }}</span>
+              <a v-if="item.file" class="profile-cert-link" :href="fileUrl(item.file)" target="_blank" rel="noopener"
+                >Ver constancia</a
+              >
+            </li>
+          </ul>
         </article>
       </div>
     </div>
@@ -241,6 +265,76 @@ import { profile } from "../../../content/profile";
     &-social {
       background-color: var(--color-beige-700);
       color: var(--color-text-400);
+    }
+  }
+  &-certs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--space-md);
+    grid-template-columns: 1fr;
+
+    @include mixins.mq("md") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &-cert {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-beige-400);
+
+    &-name {
+      font-size: var(--font-size-md);
+      line-height: 1.3;
+    }
+
+    &-issuer {
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+      color: var(--color-text-300);
+    }
+
+    &-detail {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-400);
+    }
+
+    &-link {
+      margin-top: 4px;
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+      color: var(--color-orange-400);
+      text-decoration: underline;
+    }
+
+    &-status {
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-size: var(--font-size-xs, 12px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+
+      &-done {
+        background-color: #d8f3e7;
+        color: #1b6b3a;
+      }
+
+      &-progress {
+        background-color: #ffe3c2;
+        color: #a85500;
+      }
+
+      &-award {
+        background-color: #ecd9f7;
+        color: #6a2c91;
+      }
     }
   }
 }
