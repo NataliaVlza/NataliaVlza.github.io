@@ -3,6 +3,7 @@ import Layout from "../../../components/Layout.vue";
 import Hero from "./Hero.vue";
 import About from "./About.vue";
 //import AboutSections from "../features/about/Sections.vue";
+import Profile from "./Profile.vue";
 import Projects from "./Projects.vue";
 import Blog from "./Blog.vue";
 import { blogPreviews } from "../../../content/blog/previews";
@@ -160,7 +161,8 @@ watch(
         <div class="intro-wrapper-spacer"></div>
         <div class="about-spacer" ref="aboutSpacerRef" id="about"></div>
       </div>
-      <Projects id="projects" :end-notch="!hasBlog" @loaded="handleProjectsLoaded" />
+      <Profile id="profile" />
+      <Projects id="projects" :start-notch="false" :end-notch="!hasBlog" @loaded="handleProjectsLoaded" />
       <Blog id="blog" v-if="hasBlog" />
       <div ref="contactRef" class="home-contact">
         <Contact id="contact" v-if="projectsLoaded" />

@@ -7,7 +7,6 @@ import img_farmacia_diagramas from "../../../assets/images/projects/actividades/
 import img_carrito_swimlane from "../../../assets/images/projects/actividades/carrito-swimlane.webp";
 import img_restaurante_diagrama from "../../../assets/images/projects/actividades/restaurante-diagrama.webp";
 import img_abarrotes_diagrama from "../../../assets/images/projects/actividades/abarrotes-diagrama.webp";
-import img_ferreteria_diagrama from "../../../assets/images/projects/actividades/ferreteria-diagrama.webp";
 import img_instagram_login from "../../../assets/images/projects/actividades/instagram-login.webp";
 import img_astro_aventura from "../../../assets/images/projects/actividades/astro-aventura.webp";
 import img_sonora_diagrama from "../../../assets/images/projects/actividades/sonora-diagrama.webp";
@@ -21,8 +20,13 @@ export default {
   theme: "light",
   tags: [],
   description:
-    "Colección de actividades de la materia de Ingeniería de Software: diagramas de flujo, UML y de carriles (swimlane), y diseño de interfaces para distintos sistemas, como un cajero automático, una farmacia, un restaurante, una tienda de abarrotes, una ferretería, una biblioteca y varios videojuegos.<br/><br/>Cada sección muestra los diagramas y abre los documentos de interfaces aquí mismo; los visores tienen su botón de descarga.",
+    "Colección de diagramas (flujo, UML y de carriles) y prototipos de interfaces para distintos sistemas: cajero automático, farmacia, restaurante, abarrotes, biblioteca y videojuegos.",
   components: [
+    { type: "text", props: { title: "1. Descripción", text: "Colección de actividades de diagramas e interfaces de la Ingeniería en Sistemas de Información: diagramas de flujo, UML y de carriles (swimlane), y diseño de interfaces para distintos sistemas, como un cajero automático, una farmacia, un restaurante, una tienda de abarrotes, una biblioteca y varios videojuegos." } },
+    { type: "text", props: { title: "2. Requerimientos del cliente", text: "Cada actividad parte de un caso de estudio en el que un negocio o un usuario necesita un sistema. El caso más completo, el de la Ferretería UNISON, tiene su propia entrada en el blog con los requerimientos del cliente." } },
+    { type: "text", props: { title: "3. ¿Cómo se diseñó la solución?", text: "Para cada caso se modeló el proceso con diagramas (de flujo, UML y de carriles) y se pensó cómo debía verse y usarse el sistema, definiendo las pantallas y la navegación." } },
+    { type: "text", props: { title: "4. ¿Cómo se implementó la solución?", text: "Los diagramas se elaboraron con herramientas como draw.io, y las interfaces se diseñaron como prototipos en diapositivas, que simulan cómo se navega el sistema." } },
+    { type: "text", props: { title: "5. ¿Cuál fue el resultado?", text: "El resultado es una colección de diagramas y prototipos de interfaces, que se muestra a continuación, organizada por sistema." } },
     { type: "text", props: { title: "Diagramas de flujo", text: "Ejemplos de diagramas de flujo y su documento." } },
     { type: "media", props: { type: "image", src: img_flujo_ejemplos, alt: "Ejemplos de diagramas de flujo", fit: "contain" } },
     { type: "document", props: { kind: "pdf", src: "docs/actividades/diagrama-flujo.pdf", title: "Diagrama de flujo", heightVh: 70 } },
@@ -43,10 +47,6 @@ export default {
     { type: "text", props: { title: "Abarrotes Buen Precio", text: "Diagrama y diseño de interfaces para una tienda de abarrotes." } },
     { type: "media", props: { type: "image", src: img_abarrotes_diagrama, alt: "Diagrama de abarrotes", fit: "contain" } },
     { type: "document", props: { kind: "pdf", src: "docs/actividades/abarrotes-interfaces.pdf", title: "Interfaces de abarrotes", heightVh: 70 } },
-    { type: "text", props: { title: "Ferretería UNISON", text: "Requerimientos, diagrama y diseño de interfaces de una ferretería." } },
-    { type: "document", props: { kind: "pdf", src: "docs/actividades/ferreteria-requerimientos.pdf", title: "Requerimientos de la ferretería" } },
-    { type: "media", props: { type: "image", src: img_ferreteria_diagrama, alt: "Diagrama de la ferretería", fit: "contain" } },
-    { type: "document", props: { kind: "pdf", src: "docs/actividades/ferreteria-interfaces.pdf", title: "Interfaces de la ferretería", heightVh: 70 } },
     { type: "text", props: { title: "Funeraria", text: "Diseño de interfaces de un sistema para una funeraria." } },
     { type: "document", props: { kind: "pdf", src: "docs/actividades/funeraria-interfaces.pdf", title: "Interfaces de la funeraria", heightVh: 70 } },
     { type: "text", props: { title: "Login de biblioteca", text: "Diseño de la pantalla de inicio de sesión de una biblioteca." } },

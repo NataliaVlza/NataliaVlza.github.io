@@ -1,3 +1,4 @@
+import thumbFerreteria from "../../assets/thumbnails/blog-ferreteria.webp";
 import thumbOcio from "../../assets/thumbnails/blog-ocio-digital.webp";
 import thumbCascada from "../../assets/thumbnails/blog-metodologia-cascada.webp";
 import thumbActividades from "../../assets/thumbnails/blog-actividades.webp";
@@ -7,6 +8,12 @@ import type { ProjectPreview } from "../types";
 // Cada entrada del blog sale como tarjeta en la sección "Blog".
 // slug = nombre del archivo en src/content/projects/en/ (y de/), sin ".ts"
 export const blogPreviews: ProjectPreview[] = [
+  {
+    title: "Ferretería UNISON: sistema de inventario y ventas",
+    slug: "ferreteria-unison",
+    thumbnail: thumbFerreteria,
+    description: "Caso de estudio · requerimientos, diagrama UML y prototipo",
+  },
   {
     title: "Impacto del ocio digital en el rendimiento académico",
     slug: "ocio-digital-rendimiento",

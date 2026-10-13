@@ -10,7 +10,7 @@ import { isFeatureEnabled } from "../../../utils/features";
 
 import type { ProjectPreview } from "../../../content/types";
 
-const { endNotch = true } = defineProps<{ endNotch?: boolean }>();
+const { endNotch = true, startNotch = true } = defineProps<{ endNotch?: boolean; startNotch?: boolean }>();
 
 const loadedPreviews = ref<ProjectPreview[] | null>(null);
 
@@ -34,7 +34,7 @@ onMounted(loadPreviews);
 
 <template>
   <div class="projects">
-    <NotchSection class="projects-notch-start" />
+    <NotchSection v-if="startNotch" class="projects-notch-start" />
     <NotchSection v-if="endNotch" class="projects-notch-end" />
     <div class="grid">
       <div class="projects-title">
@@ -64,11 +64,11 @@ onMounted(loadPreviews);
   padding-right: var(--space-outer);
   background-color: var(--color-beige-400);
   min-height: calc(var(--lvh) * 100 + var(--radius-xxl));
-  padding-top: 96px;
+  padding-top: 64px;
   padding-bottom: 96px;
 
   @include mixins.mq("md") {
-    padding-top: 144px;
+    padding-top: 96px;
     padding-bottom: 144px;
     gap: var(--space-xxl);
   }
