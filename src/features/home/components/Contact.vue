@@ -3,6 +3,8 @@ import { ref, onMounted, onUnmounted } from "vue";
 import { transitions } from "../../../animations";
 import { t } from "../../../i18n/utils/translate";
 import Social from "../../../components/Social.vue";
+import Button from "../../../components/Button.vue";
+import { cv, cvUrl } from "../../../content/cv";
 
 const contactElement = ref<HTMLElement | null>(null);
 
@@ -22,6 +24,18 @@ onUnmounted(() => {
     <div class="contact-content">
       <h2 class="contact-title" v-html="t('lets-work-together')"></h2>
       <Social variant="background" />
+      <div class="contact-cv">
+        <a :href="cvUrl" target="_blank" rel="noopener" data-cursor="arrow-external">
+          <Button renderAs="div" variant="accent" class="children-unclickable" data-hoversound="hover">{{
+            cv.view
+          }}</Button>
+        </a>
+        <a :href="cvUrl" :download="cv.downloadName" data-cursor="arrow-external">
+          <Button renderAs="div" variant="border" class="children-unclickable" data-hoversound="hover">{{
+            cv.download
+          }}</Button>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -60,6 +74,12 @@ onUnmounted(() => {
     @include mixins.mq("lg") {
       grid-column: 2 / 6;
     }
+  }
+
+  &-cv {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
   }
 
   &-title {

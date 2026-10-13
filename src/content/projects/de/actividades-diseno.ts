@@ -10,7 +10,6 @@ import img_abarrotes_diagrama from "../../../assets/images/projects/actividades/
 import img_instagram_login from "../../../assets/images/projects/actividades/instagram-login.webp";
 import img_astro_aventura from "../../../assets/images/projects/actividades/astro-aventura.webp";
 import img_sonora_diagrama from "../../../assets/images/projects/actividades/sonora-diagrama.webp";
-import vid_alquimia_intro from "../../../assets/videos/alquimia-intro.mp4";
 import vid_astro_aventura from "../../../assets/videos/astro-aventura.mp4";
 
 import type { ProjectContent } from "../../types";
@@ -55,9 +54,6 @@ export default {
     { type: "media", props: { type: "image", src: img_instagram_login, alt: "Login estilo Instagram", fit: "contain" } },
     { type: "text", props: { title: "Vocales", text: "Diseño de interfaces de una aplicación sobre las vocales." } },
     { type: "document", props: { kind: "pdf", src: "docs/actividades/vocales-interfaces.pdf", title: "Interfaces de la aplicación de vocales", heightVh: 70 } },
-    { type: "text", props: { title: "Videojuego: Alquimia", text: "Diseño de interfaces y video de introducción del videojuego." } },
-    { type: "media", props: { type: "video", src: vid_alquimia_intro, alt: "Introducción del videojuego Alquimia" } },
-    { type: "document", props: { kind: "pdf", src: "docs/actividades/alquimia-interfaces.pdf", title: "Interfaces del videojuego Alquimia", heightVh: 70 } },
     { type: "text", props: { title: "Astro Aventura", text: "Diseño del videojuego: pantallas, documento y video de demostración." } },
     { type: "media", props: { type: "image", src: img_astro_aventura, alt: "Diseño de Astro Aventura", fit: "contain" } },
     { type: "media", props: { type: "video", src: vid_astro_aventura, alt: "Demostración de Astro Aventura" } },

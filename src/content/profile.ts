@@ -2,9 +2,9 @@
 export const profile = {
   banner: "Perfil",
   fullName: "Natalia Guadalupe Sánchez Valenzuela",
-  role: "Aspirante a Analista de Datos",
+  role: "Aspirante a Ciencia de Datos",
   // texto corto que aparece sobre el avatar y en la etiqueta de la portada
-  bannerRole: "Aspirante a Analista de Datos",
+  bannerRole: "Aspirante a Ciencia de Datos",
   tagline: "Analítica, curiosa y con gusto por el pensamiento lógico y la resolución de problemas.",
   who: {
     title: "¿Quién soy?",
