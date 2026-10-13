@@ -39,7 +39,7 @@ export const profile = {
     title: "Habilidades",
     technical: {
       title: "Técnicas",
-      items: ["PostgreSQL", "MySQL", "SQLite", "Java", "C#", "Figma", "draw.io", "Git"],
+      items: ["PostgreSQL", "MySQL", "Java", "C#", "Figma", "draw.io", "Git"],
     },
     social: {
       title: "Sociales",
